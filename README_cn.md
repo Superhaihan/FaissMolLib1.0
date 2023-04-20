@@ -1,7 +1,10 @@
-How to run?
+# How To Run
 
-Step one, run the graph_compute.py file, which will generate all the embedding.npy files, id2name.json files, and name2id.json files in the library.
+按以下三步走：  
+1.跑graph_compute.py文件， 得到库里所有的embedding.npy文件、id2name.json文件, name2id.json文件.  
+2.跑search_deploy.py文件， 将库里所有向量加入faiss训练，并部署成一个查询服务.  
+1.跑send_request.py 或者app.py文件， 发送 查询请求 至 查询服务, 返回查询结果。
 
-Step two, run the search_deploy.py file to add all the vectors in the library to the faiss training and deploy it as a query service.
-
-Step three, run the send_request.py file, send a query request to the query service, and return the query result.
+链接：https://pan.baidu.com/s/13jQ9kjOOan9AS5StOXrArw 
+提取码：mol1 
+--来自百度网盘超级会员V4的分享
