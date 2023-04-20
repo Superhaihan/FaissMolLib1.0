@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FaissMolLib</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 50px;
+            font-size: 50px; /* 修改为 50px */
+        }
+
+        label {
+            display: block;
+            font-size: 24px; /* 修改为 24px */
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 20px; /* 修改为 20px */
+            border-radius: 5px;
+            border: none;
+            background-color: #f2f2f2;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #009688;
+            color: #fff;
+            font-size: 20px; /* 修改为 20px */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .result-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 30px; /* 修改为 30px */
+            margin-bottom: 20px;
+        }
+
+        .result-box {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .result {
+            font-size: 24px; /* 修改为 24px */
+            color: #333;
+            font-weight: bold;
+        }
+
+        .result-info {
+            color: #888;
+            font-size: 18px; /* 修改为 18px */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>FaissMolLib</h1>
+    <form method="post">
+        <label for="query_name">Query molecule (SMILES):</label>
+        <input type="text" id="query_name" name="query_name" placeholder="Enter SMILES string">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if query_result %}
+        <div class="result-container">
+            <h2>Search Results:</h2>
+            <div class="result-box">
+                <div class="result">{{ query_result | safe }}</div>
+
+            </div>
+        </div>
+    {% endif %}
+</div>
